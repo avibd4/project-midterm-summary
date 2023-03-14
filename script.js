@@ -16,7 +16,6 @@ const getLocalStoarge = (key) => {
 let localStoargeJobs = getLocalStoarge('jobs')? getLocalStoarge('jobs'): []
 
 
-const allJobsUrl = 'https://remotive.com/api/remote-jobs?limit=100'
 
 
 homeBtn.addEventListener('click', () => {
@@ -29,7 +28,8 @@ allJobsBtn.addEventListener('click', async () => {
     try {
         homeBoard.style.display = 'none'
         loadingDiv.style.display = 'block'
-
+        
+        const allJobsUrl = 'https://remotive.com/api/remote-jobs?limit=100'
         const restApi = await fetch(allJobsUrl)
         const result = await restApi.json()                
        
